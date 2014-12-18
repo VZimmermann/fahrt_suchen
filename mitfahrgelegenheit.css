@@ -1,0 +1,209 @@
+Enter file c@media screen {
+	/* ... Formatdefinitionen zur Bildschirmausgabe ... */
+	.noprint {
+		display: inline;
+	}
+
+body	{
+background-image:url(strasse_gross.jpg);
+background-repeat:no-repeat;
+background-size:100% 100%;
+}
+
+
+.container{
+background: rgba(255,255,255,1.0);
+}
+
+#balken_gruen{
+	background-color: #83B81A;
+	height:5%;
+}
+
+#balken_weiss_1{
+	background-color: white	;
+	height:5%;
+	width:100%;
+}
+
+#balken_weiss_2{
+	
+	height:165px;
+	width:100%;
+	
+}
+/*Header*/
+#Header{
+	height:80px;
+}
+
+div#Header img	{
+
+margin-top:0.6%;
+margin-right:0.9%;
+}
+
+div#Header nav{
+background-color:#737373;
+}
+
+div#Header li{
+text-decoration:none;
+font-weight:normal;
+color:red;
+list-style:none;
+}  
+
+div#Header ul	{
+   background-color: #737373;
+   color:white;
+   text-decoration:none;
+    padding: 0px;
+    margin: 0px;
+	
+ }
+ 
+ div#Header ul li	{
+	color:white;
+	padding:0.5%;
+ }
+ 
+ div#Header ul li a	{
+	text-decoration: none;
+    display: block;
+    color: white;
+}
+
+div#Header ul li ul{
+    display: inline;
+    visibility: hidden;
+    position: absolute;
+    padding:0px;
+}
+
+div#Header ul:after {
+    clear: both;
+    content: " ";
+    display: block;
+    font-size: 10;
+    height: 0;
+    visibility: hidden;
+}
+
+div#Header ul li:hover >ul {
+    visibility: visible;
+}
+
+div#Header ul li ul li{
+    float: none;
+}
+
+div#Header ul li ul li a:hover{
+    color: black;
+	background-color:white;
+}
+
+/*Footereinstellungen*/
+#Footer{
+	bottom:0;
+	height:7%;
+	padding-left:5%;
+	padding-top:1%;
+	background-color: #83B81A;
+	 color:white;
+	}
+div#Footer a{
+color:white;
+text-decoration:none;
+}
+
+div#Footer a:hover, div#Footer a:focus, div#Footer a:visited {
+	color:white;
+	text-decoration:none;
+}
+
+
+
+
+
+/*Hauptteil*/
+#Hauptteil{
+	background-color:#DADCDC;
+	height:500px;
+	
+}
+
+div.block{
+float:left;
+margin:3%;
+padding-left:2%;
+padding-right:2%;
+background-color:white;
+width:20%;
+height:40%;
+}	
+
+.buttoneins{
+	background-color:#83B81A;
+	color:white;
+	border:none;
+	padding:1%;
+	font-size:1.5em;
+
+	
+
+	border-radius:9px;
+}
+.buttoneins:hover{
+	cursor:pointer;
+}
+
+.buttonzwei{
+	background-color:#83B81A;
+	color:white;
+	border:none;
+	padding:1%;
+	font-size:1.5em;
+
+
+	border-radius:9px;
+}
+
+.buttonzwei:hover{
+cursor:pointer;
+}
+
+.button_weiss{
+	background-color:none;
+	border:none;
+	font-size:1.3em;
+
+	
+}
+.button_weiss:hover{
+cursor:pointer;
+
+}
+
+
+img#Studieren{
+	position:absolute;
+	right:5%;
+	
+}
+
+#buttonfahrten	{
+	background-color:grey;
+	height:40px;
+}
+#gruenerBalken	{
+	height:7%;
+	padding-left:5%;
+	padding-top:1%;
+	background-color: #83B81A;
+	
+}
+#table	{
+	border-color:green;
+}
+ontents here
