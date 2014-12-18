@@ -1,0 +1,236 @@
+Enter file contents here<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HFU Mitfahrgelegenheit</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="expires" content="0">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+    <meta name="author" content="Julia Klimesch, Lisa Wojtynek,Vanessa Zimmermann" />
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<meta name="keywords" content="HFU, Hochschule Furtwangen, Mitfahrgelegenheit, Furtwangen, Hochschule">
+	<meta name="description" content="Auf dieser Seite finden Sie die HFU Mitfahrgelegenheit. Konzipiert nur f&uuml;r Studenten und Angestellte der Hochschule Furtwangen.">
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="mitfahrgelegenheit.css" />
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	
+
+
+
+  </head>
+<body>
+
+<div class="container">
+ <nav class="navbar navbar-default" style="background-color:white;border:none;" role="navigation">
+  <div class="container-fluid">
+  
+    <div class="navbar-header">
+	<!--bildet das Men𺥩chen beim kleiner machen ab und steht f𲠤en Teil, der nach dem verkleinern 𢥲haupt noch angezeigt wird-->
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="www.hs-furtwangen.de"><img src="Logo_HFU.jpg"  border="0" alt="Logo_HFU"></a>
+    </div>
+	
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <!--ul's springen beim Kleiner machen in das Men𢩬d-->
+	  <ul class="nav navbar-nav">
+        <li>
+          <a href="fahrt_suchen.html">Fahrt suchen</a>
+        </li>
+        <li>
+          <a href="fahrt_anbieten.html">Fahrt anbieten</a>
+        </li>
+			
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+			<li><a href="nachrichten.html" ><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Nachrichten </a></li>
+			<li><a href="kalender.html" ><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Kalender</a></li>
+			<li><a href="profil.html" ><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Profil</a></li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span> Men&uuml;<span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+					<li><a href="meine_angebote.html">Meine Angebote</a></li>
+					<li><a href="meine_anfragen.html">Meine Anfragen</a></li>
+					<li><a href="gemerkte_fahrten.html">gemerkte Fahrten</a></li>
+					<li class="divider"></li>
+					<li><a href="#">abmelden</a></li>
+				</ul>
+			</li>
+
+      </ul>
+    </nav>
+ </div>
+
+</nav>
+
+<!--gr&uuml;ner Balken unter der Navigation-->
+  <div id="Footer" ></div>
+	
+	
+ 
+
+
+	<!--Header-->
+	<div class="Container">
+	
+	
+	 <script type="text/javascript">
+
+    var d = new Date();
+    var dm = d.getMonth() + 1;
+    var dj = d.getYear();
+
+    if (dj < 999) dj += 1900;
+
+    Kalender(dm, dj);
+
+    function Kalender (Monat, Jahr) {
+
+      Monatsname = new Array("Januar", "Februar", "März", "April", "Mai", "Juni",
+                             "Juli", "August", "September", "Oktober", "November", "Dezember");
+      Tag = new Array("Mo", "Di", "Mi", "Do", "Fr", "Sa", "So");
+
+      var KSchrArt = "Verdana,Arial";  // Schriftart Kalenderkopf 
+      var KSchrGroesse = 3;            // Schriftgroesse 1-7 Kalenderkopf
+      var KSchrFarbe = "#FFFFFF";      // Schriftfarbe Kalenderkopf
+      var Khgrund = "#00B200";         // Hintergrundfarbe Kalenderkopf
+      var TSchrArt = "Verdana,Arial";  // Schriftart Tagesanzeige
+      var TSchrGroesse = 3;            // Schriftgroesse 1-7 Tagesanzeige
+      var TSchrFarbe = "#000000";      // Schriftfarbe Tagesanzeige
+      var Thgrund = "#FFFFFF";         // Hintergrundfarbe Tagesanzeige
+      var SoFarbe = "#EC0C0C";         // Schriftfarbe f. Sonntage
+      var Ahgrund = "#00FF00";         // Hintergrundfarbe für heutigen Tag
+
+      var jetzt = new Date();
+      var DieserMonat = jetzt.getMonth() + 1;
+      var DiesesJahr = jetzt.getYear();
+
+      if (DiesesJahr < 999) DiesesJahr += 1900;
+
+      var DieserTag = jetzt.getDate();
+      var Zeit = new Date(Jahr, Monat - 1, 1);
+      var Start = Zeit.getDay();
+
+      if (Start > 0) {
+       Start--;
+      } else {
+        Start = 6;
+      }
+
+      var Stop = 31;
+
+      if (Monat == 4 || Monat == 6 || Monat == 9 || Monat == 11) --Stop;
+
+      if (Monat == 2) {
+                      Stop = Stop-3;
+        if (Jahr %   4 == 0) Stop++;
+        if (Jahr % 100 == 0) Stop--;
+        if (Jahr % 400 == 0) Stop++;
+      }
+
+      document.write('<table border="3" cellpadding="1" cellspacing="1">');
+
+      var Monatskopf = Monatsname[Monat - 1] + " " + Jahr;
+        SchreibeKopf(Monatskopf, Khgrund, KSchrFarbe, KSchrGroesse, KSchrArt);
+      var Tageszahl = 1;
+
+      for (var i = 0; i <= 5; i++) {
+
+        document.write("<tr>");
+
+        for (var j = 0; j <= 5; j++) {
+          if ((i == 0) && (j < Start)) {
+            SchreibeZelle(" ", Thgrund, TSchrFarbe, TSchrGroesse, TSchrArt);
+          } else {
+            if (Tageszahl > Stop) {
+              SchreibeZelle(" ", Thgrund, TSchrFarbe, TSchrGroesse, TSchrArt);
+            } else {
+              if ((Jahr == DiesesJahr) && (Monat == DieserMonat) && (Tageszahl == DieserTag)) {
+                SchreibeZelle(Tageszahl, Ahgrund, TSchrFarbe, TSchrGroesse, TSchrArt);
+              } else {
+                SchreibeZelle(Tageszahl, Thgrund, TSchrFarbe, TSchrGroesse, TSchrArt);
+              }
+                Tageszahl++;
+            }
+          }
+        }
+
+        if (Tageszahl > Stop) {
+          SchreibeZelle(" ", Thgrund, SoFarbe, TSchrGroesse, TSchrArt);
+        } else {
+          if ((Jahr == DiesesJahr) && (Monat == DieserMonat) && (Tageszahl == DieserTag)) {
+            SchreibeZelle(Tageszahl, Ahgrund, SoFarbe, TSchrGroesse, TSchrArt);
+          } else {
+            SchreibeZelle(Tageszahl, Thgrund, SoFarbe, TSchrGroesse, TSchrArt);
+          }
+            Tageszahl++;
+        }
+          document.write("<\/tr>");
+      }
+        document.write("<\/table>");
+    }
+
+    function SchreibeKopf (Monatstitel, HgFarbe, SchrFarbe, SchrGroesse, SchrArt) {
+
+      document.write("<tr>");
+      document.write('<td align="center" colspan="7" valign="middle" bgcolor="' + HgFarbe + '">');
+      document.write('<font size="' + SchrGroesse + '" color="' + SchrFarbe + '" face="' + SchrArt + '"><b>');
+      document.write(Monatstitel);
+      document.write("<\/b><\/font><\/td><\/tr>");
+      document.write("<tr>");
+
+      for (var i = 0; i <= 6; i++)
+        SchreibeZelle(Tag[i], HgFarbe, SchrFarbe, SchrGroesse, SchrArt);
+        document.write("<\/tr>");
+    }
+
+    function SchreibeZelle (Inhalt, HgFarbe, SchrFarbe, SchrGroesse, SchrArt) {
+      document.write('<td align="center" valign="middle" bgcolor="' + HgFarbe + '">');
+      document.write('<font size="' + SchrGroesse + '" color="' + SchrFarbe + '" face="' + SchrArt + '"><b>');
+      document.write(Inhalt);
+      document.write("<\/b><\/font><\/td>");
+    }
+
+  </script>
+
+<!--			<table border=1 id='calendar'><tr style='visibility:collapse;' hidden><td colspan=7 id='date_memory'>---</td></tr><tr><td class='calendar_head'><a class='calendar_link'            href='javascript:prevMonth()'> &laquo;</a></td><td colspan=5 class='calendar_head_month' id='calendar_month'>            ---</td><td class='calendar_head'><a class='calendar_link'            href='javascript:nextMonth()'> &raquo;</a></td></tr><tr><td class='calendar_day'>Mo</td><td class='calendar_day'>Di</td><td class='calendar_day'>Mi</td><td class='calendar_day'>Do</td><td class='calendar_day'>Fr</td><td class='calendar_day'>Sa</td><td class='calendar_day'>So</td></tr><tr><td class='calendar_entry' id='calendar_entry_1'>-x-</td><td class='calendar_entry' id='calendar_entry_2'>-x-</td><td class='calendar_entry' id='calendar_entry_3'>-x-</td><td class='calendar_entry' id='calendar_entry_4'>-x-</td><td class='calendar_entry' id='calendar_entry_5'>-x-</td><td class='calendar_entry' id='calendar_entry_6'>-x-</td><td class='calendar_entry' id='calendar_entry_7'>-x-</td></tr><tr><td class='calendar_entry' id='calendar_entry_8'>-x-</td><td class='calendar_entry' id='calendar_entry_9'>-x-</td><td class='calendar_entry' id='calendar_entry_10'>-x-</td><td class='calendar_entry' id='calendar_entry_11'>-x-</td><td class='calendar_entry' id='calendar_entry_12'>-x-</td><td class='calendar_entry' id='calendar_entry_13'>-x-</td><td class='calendar_entry' id='calendar_entry_14'>-x-</td></tr><tr><td class='calendar_entry' id='calendar_entry_15'>-x-</td><td class='calendar_entry' id='calendar_entry_16'>-x-</td><td class='calendar_entry' id='calendar_entry_17'>-x-</td><td class='calendar_entry' id='calendar_entry_18'>-x-</td><td class='calendar_entry' id='calendar_entry_19'>-x-</td><td class='calendar_entry' id='calendar_entry_20'>-x-</td><td class='calendar_entry' id='calendar_entry_21'>-x-</td></tr><tr><td class='calendar_entry' id='calendar_entry_22'>-x-</td><td class='calendar_entry' id='calendar_entry_23'>-x-</td><td class='calendar_entry' id='calendar_entry_24'>-x-</td><td class='calendar_entry' id='calendar_entry_25'>-x-</td><td class='calendar_entry' id='calendar_entry_26'>-x-</td><td class='calendar_entry' id='calendar_entry_27'>-x-</td><td class='calendar_entry' id='calendar_entry_28'>-x-</td></tr><tr><td class='calendar_entry' id='calendar_entry_29'>-x-</td><td class='calendar_entry' id='calendar_entry_30'>-x-</td><td class='calendar_entry' id='calendar_entry_31'>-x-</td><td class='calendar_entry' id='calendar_entry_32'>-x-</td><td class='calendar_entry' id='calendar_entry_33'>-x-</td><td class='calendar_entry' id='calendar_entry_34'>-x-</td><td class='calendar_entry' id='calendar_entry_35'>-x-</td></tr><tr><td class='calendar_entry' id='calendar_entry_36'>-x-</td><td class='calendar_entry' id='calendar_entry_37'>-x-</td><td class='calendar_entry' id='calendar_entry_38'>-x-</td><td class='calendar_entry' id='calendar_entry_39'>-x-</td><td class='calendar_entry' id='calendar_entry_40'>-x-</td><td class='calendar_entry' id='calendar_entry_41'>-x-</td><td class='calendar_entry' id='calendar_entry_42'>-x-</td></tr></table>
+		<form id='myform'>    <input id='datum' /></form> -->
+	</div>
+
+	
+	<!--Weisser Balken mit Schriftzug Studieren auf h&ouml;chstem Niveau-->
+	<div id="balken_weiss_2">
+		<div class="col-md-12"><img src="Studieren_auf_hoechstem_Niveau.jpg" id="Studieren" class="img-responsive" alt="Responsive image"></div>
+	</div>
+	
+	<!--Footer-->
+	<div id="Footer">
+		<a href="faq.html" target="_blank">FAQ</a> | <a href="datenschutz.html" target="_blank">Datenschutz</a> | <a href="agb.html" target="_blank">AGB</a> | <a href="impressum.html" target="_blank">Impressum</a> | <a href="kontakt.html" target="_blank">Kontakt</a>
+	</div>
+ 
+</div><!--Ende Container div-->
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
